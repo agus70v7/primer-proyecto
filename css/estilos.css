@@ -170,6 +170,20 @@ button {
     .pie a img:hover {
       height: 60px; }
 
+section h2 {
+  display: block;
+  text-align: center;
+  margin: 10px;
+  border: 40px ridge #ffc0cb; }
+
+.cooming-soon {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  background-image: linear-gradient(354deg, #ffffff, #ffc0cb, #ffc0cb); }
+  .cooming-soon p {
+    font-size: 150px; }
+
 @keyframes title {
   0% {
     font-family: 'Courier New', Courier, monospace; }
