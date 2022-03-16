@@ -1,7 +1,37 @@
-@import "estructura";
-@import "media";
 @import "colors";
 @import "fonts";
+
+// ESTRUCTURA
+
+* {
+    padding: 0%;
+    margin: 0%;
+}
+
+body {
+    background-image: linear-gradient(to right,rgb(255, 228, 228),rgb(255, 236, 236),beige);
+}
+
+header {
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: 5rem 5rem;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-template-rows: repeat(3,6rem);
+}
+
+footer {
+    display: flex;
+    justify-content: start;
+    position: relative;
+    top: 80px;
+}
+
+// ESTILOS
 
 .banner {
     display: flex;
@@ -14,7 +44,7 @@
         margin: 10px;
         padding: 10px;
         span {
-            color:$color_main;
+            color: $color_main;
             animation-name: title;
             animation-iteration-count: infinite;
             animation-timing-function: ease-in;
@@ -77,15 +107,15 @@
     justify-content: center;
     align-items: center;
 }   button {
-    margin-top: 55px;
-    margin-bottom: 50px;
-    padding: 10px;
-    border: 15px 15px ridge $color_main;
-    border-radius: 20px;
-    background-color: $color_main;
-    transition: 0.3s;
-    &:hover {
-        font-size: 20px;
+        margin-top: 55px;
+        margin-bottom: 50px;
+        padding: 10px;
+        border: 15px 15px ridge $color_main;
+        border-radius: 20px;
+        background-color: $color_main;
+        transition: 0.3s;
+        &:hover {
+            font-size: 20px;
     }
 }
 
@@ -147,8 +177,79 @@ section {
     }
 }
 
+// ANIMACIONES
+
 @keyframes title {
     0% {font-family: 'Courier New', Courier, monospace; }
     50% {font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; }
     100% {font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; }
+}
+
+// MEDIA
+
+@media screen and (max-width:1000px) {
+    header {
+        grid-template-rows: 5rem;
+    }
+
+    .nav {
+        grid-row: 1/2;
+    }
+    
+    h1 {
+        display: none;
+    }
+
+    h2 {
+        text-align: center;
+    }
+
+    .carrusel {
+        flex-direction: column;
+        img {
+            margin: 1%;
+        }
+    }
+
+    .button {
+        button {
+            margin-bottom: 50px;
+        }
+    }
+
+    .cooming-soon {
+        p {
+            font-size: 100px;
+        }
+    }
+}
+
+@media screen and (max-width:660px) {
+    header {
+        display: grid;
+    }
+
+    .button {
+        button {
+            margin-bottom: 50px; 
+        }
+    }
+
+    .nav {
+        ul {
+            li {
+                background-color: $color_main;
+                a {
+                    background-color: $all_color;
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+
+    .cooming-soon {
+        p {
+            font-size: 50px;
+        }
+    }   
 }
