@@ -4,7 +4,7 @@ body {
 .off h2 {
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; }
 
-.button button {
+.button button, .button--extend button {
   font-family: 'Pacifico', cursive; }
 
 * {
@@ -12,7 +12,7 @@ body {
   margin: 0%; }
 
 body {
-  background-image: linear-gradient(to right, #ffe4e4, #ffecec, beige); }
+  background-image: linear-gradient(to right, #ffe4e4, #ffecec, #f5f5dc); }
 
 header {
   display: grid;
@@ -87,12 +87,18 @@ footer {
   .off h2 {
     font-size: 70px; }
 
-.button {
+.button, .button--extend {
   display: flex;
   grid-column: 3/5;
   grid-row: 3;
   justify-content: center;
   align-items: center; }
+
+.button--extend {
+  margin: -50px; }
+  .button--extend a {
+    text-decoration: none;
+    color: #000000; }
 
 button {
   margin-top: 55px;
@@ -106,6 +112,8 @@ button {
     font-size: 20px; }
 
 .carrusel {
+  width: -50px;
+  height: -50px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -171,7 +179,7 @@ section h2 {
     flex-direction: column; }
     .carrusel img {
       margin: 1%; }
-  .button button {
+  .button button, .button--extend button {
     margin-bottom: 50px; }
   .cooming-soon p {
     font-size: 100px; } }
@@ -179,7 +187,7 @@ section h2 {
 @media screen and (max-width: 660px) {
   header {
     display: grid; }
-  .button button {
+  .button button, .button--extend button {
     margin-bottom: 50px; }
   .nav ul li {
     background-color: #ffc0cb; }

@@ -1,6 +1,22 @@
 @import "colors";
 @import "fonts";
 
+// MAPS
+
+$button: (
+    medida1: 55px,
+    medida2: 50px,
+    color1: $color_main,
+    color2: $color_second,
+);
+
+// MIXIN
+
+@mixin achicar {
+    width: -50px;
+    height: -50px;
+}
+
 // ESTRUCTURA
 
 * {
@@ -9,7 +25,7 @@
 }
 
 body {
-    background-image: linear-gradient(to right,rgb(255, 228, 228),rgb(255, 236, 236),beige);
+    background-image: linear-gradient(to right,rgb(255, 228, 228),rgb(255, 236, 236),$color_second);
 }
 
 header {
@@ -106,20 +122,32 @@ footer {
     grid-row: 3;
     justify-content: center;
     align-items: center;
-}   button {
-        margin-top: 55px;
-        margin-bottom: 50px;
-        padding: 10px;
-        border: 15px 15px ridge $color_main;
-        border-radius: 20px;
-        background-color: $color_main;
-        transition: 0.3s;
-        &:hover {
-            font-size: 20px;
+}
+
+.button--extend{
+    @extend .button;
+    margin: -50px;
+    a {
+        text-decoration: none;
+        color: $no_color;
+    }
+}
+
+button {
+    margin-top: map-get($button, medida1);
+    margin-bottom: map-get($button, medida2);
+    padding: 10px;
+    border: 15px 15px ridge $color_main;
+    border-radius: 20px;
+    background-color: map-get($button, color1);
+    transition: 0.3s;
+    &:hover {
+        font-size: 20px;
     }
 }
 
 .carrusel {
+    @include achicar;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
